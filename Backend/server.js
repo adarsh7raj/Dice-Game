@@ -14,7 +14,9 @@ function generateFairHash(serverSeed, clientSeed, nonce) {
     hash.update(`${serverSeed}-${clientSeed}-${nonce}`);  // This will add a input to the hash object , this will not return anything.
     return hash.digest("hex");    // This will create the 16 character hash.
 }
-
+app.get("/",function(req,res){
+    res.json({Meassage:"HI from the server"});
+})
 app.post("/roll-dice", function(req, res){
     const serverSeed = crypto.randomBytes(16).toString("hex"); // Server-side randomness , it will generate 32 character long string
     console.log(serverSeed);
