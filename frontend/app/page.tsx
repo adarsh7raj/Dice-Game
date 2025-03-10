@@ -17,7 +17,7 @@ export default  function DiceGame() {
         
 
             try {
-                const response = await fetch("http://localhost:5000/roll-dice", {
+                const response = await fetch("https://dice-game-ysbo.onrender.com/roll-dice", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ betAmount, clientSeed })
